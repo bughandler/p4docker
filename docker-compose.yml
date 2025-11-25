@@ -1,0 +1,28 @@
+services:
+  p4d:
+    container_name: "p4d"
+    build:
+        dockerfile: Dockerfile
+    restart: unless-stopped
+    hostname: perforce
+    environment:
+      - P4PORT=ssl:1666
+      - P4NAME=perforceserver
+      - PUID=0
+      - PGID=0
+      - UMASK=000
+    volumes:
+      - "p4data:/p4data"
+      - "p4ssl:/p4ssl"
+    ports:
+      - 1666:1666
+
+volumes:
+  p4data:
+    # Note: Prior-create named volume
+    #   docker volume create --driver local --opt type=none --opt device=YOUR_HOST_PATH_FOR_P4DATA --opt o=bind p4data
+    # external: true
+  p4ssl:
+    # Note: Prior-create named volume
+    #   docker volume create --driver local --opt type=none --opt device=YOUR_HOST_PATH_FOR_P4SSL --opt o=bind p4ssl
+    # external: true
