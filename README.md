@@ -13,11 +13,7 @@ docker compose up -d
 
 ### Credits
 
-Mainly comes from the blog post:
-
-https://oualid.games/blogs/dockerize-your-perforce/
-
-And I did some minor changes to adapt to the latest Perforce versions.
+Mainly comes from [this blog post](https://oualid.games/blogs/dockerize-your-perforce/), and I made some minor changes to adapt to the latest Perforce versions.
 
 
 
